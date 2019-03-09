@@ -27,9 +27,9 @@ $id = $_SESSION['user'];
     float: left;
     margin: 0;
 }
-#to_ninnniku_btn{background-color: red;}
-#to_ranking_btn{background-color: green;}
-#to_find_btn{background-color: blue;}
+#to_ninnniku_btn{background-color: #FCED57;}
+#to_ranking_btn{background-color: #39BF3E;}
+#to_find_btn{background-color: #BA133C;}
 </style>
 </head>
 <body>
@@ -56,22 +56,22 @@ $id = $_SESSION['user'];
 	<div id="top_menu_buttons" class="w-100">
 		<div id="buttons_sub" class="h-100 w-50">
 			<div class="p-1 h-50"><a href="ninnniku.php">
-				<div id="to_ninnniku_btn" class="h-100 m-0">今いるラーメン店にチェックイン</div>
+				<div id="to_ninnniku_btn" class="h-100 m-0 p-1 text-light rounded">今いるラーメン店にチェックイン</div>
 			</a></div>
 			<div class="p-1 h-50"><a href="ranking.php">
-				<div id="to_ranking_btn" class="h-100 m-0">ランキング</div>
+				<div id="to_ranking_btn" class="h-100 m-0 p-1 text-light rounded">ランキング</div>
 			</a></div>
 		</div>
 		<div id="buttons_main"class=" h-100 w-50">
 			<div class="p-1 h-100"><a href="find.php">
-				<div id="to_find_btn" class="h-100 m-0">ラーメン店を探す</div>					
+				<div id="to_find_btn" class="h-100 m-0 p-1 text-light rounded">ラーメン店を探す</div>					
 			</a></div>
 		</div>
 </div>
 </div>
 <div id="setting" class="col-12">
-	<p><a href="change.php">パスワードを変更</a></p>
-	<p><a href="signout.php?logout">ログアウト</a></p>
+	<a class="btn btn-outline-secondary " href="change.php">パスワードを変更</a>
+	<a class="btn btn-outline-secondary " href="signout.php?logout">ログアウト</a>
 </div>
 </div>
 </div>
