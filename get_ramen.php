@@ -27,11 +27,14 @@ if ($stmt->execute([$ido, $keido])) {
 			$stmt3 = $pdo->prepare($sql);
 			$stmt3->execute([$user_id, $ramen_num]);
 			$result3 = $stmt3->fetchColumn();
+			echo "<p><i class=\"fas fa-check text-success\"></i>チェックイン成功！</p>
+				<div class=\"card p-2\">";
 			if ($result3 == 1) {
-				echo $shop_name."<span class=\"badge badge-info badge-pill mx-1\">未</span>";
+				echo $shop_name."<span class=\"badge badge-info badge-pill mx-1\">未</span></div>";
 			} else {
 				echo $shop_name;	
 			}
+			echo "</div>";
 		}
 	}
 }
