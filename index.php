@@ -4,20 +4,22 @@ include_once 'dbconnect.php';
 if(!isset($_SESSION['user'])) {
 	header("Location: signin.php");
 }
-$user_id = $_SESSION['user'];
+$id = $_SESSION['user'];
+
+$user_id = $id;
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>トップページ</title>
+<title>マイページ</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
 <style type="text/css">
 @media (min-width: 992px) { 
-	#name{min-height:40vh;}	
+	#name{height:40vh;}	
  }
 #top_menu_buttons{
     height:50vh;
@@ -46,16 +48,24 @@ $user_id = $_SESSION['user'];
 	<br><br><br><br><br><br><br><br><br>
 </div>
 <div class="col-12 col-lg-6">
-	<div id="name " class="container my-5">
-		<a href="mypage.php ">
-		<div class="p-3 m-0 bg_gray_t">
-		<?php if ($user_id!="") echo "<div class=\"text-dark\"><h4>ID:".$user_id."</h4></div>"; 
-		$achv_name="ラーメン初心者";//称号の名前
+	<div id="name " class="container m-5 ml-0">
+		<?php if ($user_id!="") echo "<div><h4>ID:".$user_id."</h4></div>";
+		include_once 'dbconnect.php';
+		$dsn = 'mysql:host='.$host.';dbname='.$dbname.';charset=utf8';
+		$pdo = new PDO($dsn, $username, $password, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+		$sql = "SELECT achv FROM users WHERE id=?";
+		$stmt = $pdo->prepare($sql);
+		$stmt->execute([$user_id]);
+		$result = $stmt->fetch(PDO::FETCH_ASSOC);
+		$achv = $result['achv'];
+		$sql = "SELECT * FROM ach_db WHERE achv_id=?";
+		$stmt = $pdo->prepare($sql);
+		$stmt->execute([$achv]);
+		$result = $stmt->fetch(PDO::FETCH_ASSOC);
+		$achv_name=$result['achv_name'];//称号の名前
 		$achv_class=0;//称号のクラス
 		echo "<div class=\"rounded px-3 py-1 m-auto text-white achv achv_cls".$achv_class."\">".$achv_name."</div>"
 		?>
-		</div>
-		</a>
 	</div>
 	<div id="top_menu_buttons" class="w-100">
 		<div id="buttons_sub" class="h-100 w-50">
