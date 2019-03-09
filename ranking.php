@@ -13,35 +13,12 @@ $user_id = $_SESSION['user'];
 <title>ランキング</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
-<style>
-body {
-	margin-right: auto;
-	margin-left: auto;
-	width: 90%;
-	max-width: 600px;
-}
-table {
-	border-collapse: collapse;
-	width: 100%;
-	max-width: 400px;
-}
-table th {
-	padding: 10px;
-	border: solid 1px black;
-}
-table td {
-	padding: 3px 10px;
-	border: solid 1px black;
-	text-align: right;
-}
-</style>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
+<div class="container">
 <h2>ランキング</h2>
 <hr>
-<table>
-<tr><th>RANK</th><th>ID</th><th>称号</th></tr>
 <?php
 $dsn = 'mysql:host='.$host.';dbname='.$dbname.';charset=utf8';
 $pdo = new PDO($dsn, $username, $password, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
@@ -54,9 +31,17 @@ foreach ($stmt as $row) {
 	$achievement = $row['achievement'];
 	if ($rank <= 100) {
 		if ($id == $user_id) {
-			echo "<tr style=\"background: #ffcccc\"><td>".$rank."</td><td>".$id."</td><td>".$point."</td>\n";
+			echo "<div class=\"card container p-3\"><class class=\"row\">
+			<div class=\"col-4\">".$rank."位</div>
+			<div class=\"col-4\">".$id."</div>
+			<div class=\"col-4\">".$point."points</div>
+			</div>";
 		} else {
-			echo "<tr><td>".$rank."</td><td>".$id."</td><td>".$point."</td>\n";
+			echo "<div class=\"card container p-3\"><class class=\"row\">
+			<div class=\"col-4\">".$rank."位</div>
+			<div class=\"col-4\">".$id."</div>
+			<div class=\"col-4\">".$point."points</div>
+			</div></div>";
 		}
 	} else {
 		if ($id == $user_id) {
@@ -68,9 +53,7 @@ foreach ($stmt as $row) {
 	$rank++;
 }
 ?>
-</table>
-<br>
-<br>
 <a href="./">トップページへ戻る</a>
+</div>
 </body>
 </html>
