@@ -21,7 +21,7 @@ if(!isset($_SESSION['user'])) {
 <body>
 <div class="container">
 <div style="display: flex; justify-content: space-between; align-items: flex-end;">
-<h2 class="text-center">ラーメン屋</h2>
+<h2>ラーメン屋</h2>
 <?php if ($user_id!="") echo $user_id; ?>
 </div>
 <script>
@@ -32,6 +32,8 @@ function getRamen() {
 			var data = position.coords;
 			var lat = data.latitude;
 			var lng = data.longitude;
+			//var lat = 33.5926916;
+			//var lng = 130.3968849;
 			var user_id = <?php echo json_encode($user_id); ?>;
 			var text = "user_id="+user_id+"&ido="+lat+"&keido="+lng;
 			$.post('get_ramen.php', text).done(function(data) {
