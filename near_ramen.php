@@ -15,16 +15,20 @@ $user_id = $_POST['user_id'];
 #longitude(経度)は計算が難しいので緯度よりも多めに指定する
 $sql = "SELECT * FROM shop WHERE abs(latitude - ".$ido.") < 0.00015 AND abs(longitude - ".$keido.") < 0.0003 ORDER BY abs(latitude - ".$ido.") + abs(longitude - ".$keido.") limit 3";
 $stmt = $pdo->query($sql);
-if ($stmt == "") {
-	echo "近くにラーメン屋はありません。";
-} else {
+if ($stmt) {
 	$rank=1;
 	foreach ($stmt as $row) {
 		$shop_name = $row['shop_name'];
+		if ($shop_name == "") {
+			echo "近くにラーメン屋はありません。";
+			break;
+		}
 		echo "<div class=\"card container p-3\"><class class=\"row\">
 		<div class=\"col-4\">".$shop_name."</div>
 		</div>";
 		$rank++;
 	}
+} else {
+	echo "hoge";
 }
 ?>
