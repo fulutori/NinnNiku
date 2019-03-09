@@ -69,9 +69,9 @@ $id = $_SESSION['user'];
 		</div>
 </div>
 </div>
-<div id="setting" class="col-12">
-	<a class="btn btn-outline-secondary " href="change.php">パスワードを変更</a>
-	<a class="btn btn-outline-secondary " href="signout.php?logout">ログアウト</a>
+<div id="setting" class="col-12 btn-group d-flex my-5" role="group">
+	<a class="btn btn-outline-secondary w-100" href="change.php">パスワードを変更</a>
+	<a class="btn btn-outline-secondary w-100" href="signout.php?logout">ログアウト</a>
 </div>
 </div>
 </div>
