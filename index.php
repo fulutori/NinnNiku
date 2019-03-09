@@ -37,11 +37,11 @@ $user_id = $id;
 #to_find_btn{background-color: #C41713;}
 </style>
 </head>
-<body style="padding-top:4.5rem;">
+<body style="padding-top:4.5rem ;" class="bg-maincolor2">
 
 <?php include("header.php"); ?>
 
-<div class="container">
+<div class="container ">
 <h2 class="m-1">トップページ</h2>
 <div class="row">
 <div id="character" class="col-6">
