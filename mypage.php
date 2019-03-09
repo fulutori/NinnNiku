@@ -46,40 +46,47 @@ $user_id = $id;
 <div class="row">
 
 <div class="col-12">
-	<div class="p-3 m-1 bg-light shadow">
-		<?php if ($user_id!="") echo "<div><h4>ID:".$user_id."</h4></div>";
-		include_once 'dbconnect.php';
-		$dsn = 'mysql:host='.$host.';dbname='.$dbname.';charset=utf8';
-		$pdo = new PDO($dsn, $username, $password, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-		$sql = "SELECT achv FROM users WHERE id=?";
-		$stmt = $pdo->prepare($sql);
-		$stmt->execute([$user_id]);
-		$result = $stmt->fetch(PDO::FETCH_ASSOC);
-		$achv = $result['achv'];
-		$sql = "SELECT * FROM ach_db WHERE achv_id=?";
-		$stmt = $pdo->prepare($sql);
-		$stmt->execute([$achv]);
-		$result = $stmt->fetch(PDO::FETCH_ASSOC);
-		$achv_name=$result['achv_name'];//称号の名前
-		$achv_class=$result['rare'];//称号のクラス
-		echo "<div class=\"rounded px-3 py-1 m-auto text-white achv achv_cls".$achv_class."\">".$achv_name."</div>"
-		?>
+	<div class="container p-3 shadow-sm bg-light my-2">
+	<div class="row">
+		<div class="col-6">
+			<?php if ($user_id!="") echo "<div><h4>ID:".$user_id."</h4></div>";
+			include_once 'dbconnect.php';
+			$dsn = 'mysql:host='.$host.';dbname='.$dbname.';charset=utf8';
+			$pdo = new PDO($dsn, $username, $password, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+			$sql = "SELECT achv FROM users WHERE id=?";
+			$stmt = $pdo->prepare($sql);
+			$stmt->execute([$user_id]);
+			$result = $stmt->fetch(PDO::FETCH_ASSOC);
+			$achv = $result['achv'];
+			$sql = "SELECT * FROM ach_db WHERE achv_id=?";
+			$stmt = $pdo->prepare($sql);
+			$stmt->execute([$achv]);
+			$result = $stmt->fetch(PDO::FETCH_ASSOC);
+			$achv_name=$result['achv_name'];//称号の名前
+			$achv_class=$result['rare'];//称号のクラス
+			echo "<div class=\"rounded px-3 py-1 m-auto text-white achv achv_cls".$achv_class."\">".$achv_name."</div>"
+			?>
+		</div>
+		<div class="col-6">
+			<?php echo "0point";?>
+		</div>
+	</div>
 	</div>
 </div>
-<div class="col-lg-6">
-	<h4>獲得した称号</h4>
+<div class="card m-1 col-lg-6">
+	<h4 class="card-title">獲得した称号</h4>
 	<!--phpで全表示を書く-->
 </div>
-<div class="col-lg-6">
-	<h4>履歴</h4>
+<div class="card m-1 col-lg-6">
+	<h4 class="card-title">履歴</h4>
 	<!--phpで全表示を書く-->
 </div>
-<div class="col-lg-6">
-	<h4>キャラクタ</h4>
+<div class="card m-1 col-lg-6">
+	<h4 class="card-title">キャラクタ</h4>
 	<!--phpで全表示を書く-->
 </div>
-<div class="col-lg-6">
-	<h4>傾向</h4>
+<div class="card m-1 col-lg-6">
+	<h4 class="card-title">傾向</h4>
 	<!--phpで全表示を書く-->
 </div>
 </div>
