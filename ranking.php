@@ -45,9 +45,11 @@ foreach ($stmt as $row) {
 		}
 	} else {
 		if ($id == $user_id) {
-			echo "<tr><td colspan=\"3\"></td></tr>";
-			echo "<tr style=\"background: #ffcccc\"><td>".$rank."</td><td>".$id."</td><td>".$point."</td>\n";
-			echo "<tr><td colspan=\"3\"></td></tr>";
+			echo "<div class=\"card container p-3\"><class class=\"row\">
+			<div class=\"col-4\">".$rank."位</div>
+			<div class=\"col-4\">".$id."</div>
+			<div class=\"col-4\">".$point."points</div>
+			</div></div>";
 		}
 	}
 	$rank++;

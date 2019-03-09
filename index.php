@@ -16,6 +16,11 @@ $id = $_SESSION['user'];
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
 <style type="text/css">
+@media (min-width: 992px) { 
+	#name{
+    height:40vh;
+}	
+ }
 #top_menu_buttons{
     height:50vh;
 }
@@ -27,9 +32,9 @@ $id = $_SESSION['user'];
     float: left;
     margin: 0;
 }
-#to_ninnniku_btn{background-color: #FCED57;}
+#to_ninnniku_btn{background-color: #720C08;}
 #to_ranking_btn{background-color: #39BF3E;}
-#to_find_btn{background-color: #BA133C;}
+#to_find_btn{background-color: #C41713;}
 </style>
 </head>
 <body>
