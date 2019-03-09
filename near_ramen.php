@@ -10,7 +10,10 @@ $pdo = new PDO($dsn, $username, $password, array(PDO::ATTR_ERRMODE => PDO::ERRMO
 $ido = $_POST['ido'];
 $keido = $_POST['keido'];
 $user_id = $_POST['user_id'];
-$sql = "SELECT * FROM shop ORDER BY abs(latitude - ".$ido.") + abs(longitude - ".$keido.") limit 3";
+
+#latitude(緯度)は0.00027778で31メートルぐらい
+#longitude(経度)は計算が難しいので緯度よりも多めに指定する
+$sql = "SELECT * FROM shop WHERE abs(latitude - ".$ido.") < 0.00015 AND abs(longitude - ".$keido.") < 0.0003 ORDER BY abs(latitude - ".$ido.") + abs(longitude - ".$keido.") limit 3";
 $stmt = $pdo->query($sql);
 if ($stmt == "") {
 	echo "近くにラーメン屋はありません。";
