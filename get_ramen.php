@@ -28,7 +28,7 @@ if ($stmt->execute([$ido, $keido])) {
 			$stmt3->execute([$user_id, $ramen_num]);
 			$result3 = $stmt3->fetchColumn();
 			if ($result3 == 1) {
-				echo $shop_name."(初)";
+				echo $shop_name."<span class=\"badge badge-info badge-pill mx-1\">未</span>";
 			} else {
 				echo $shop_name;	
 			}
