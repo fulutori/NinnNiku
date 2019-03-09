@@ -24,6 +24,7 @@ if(!isset($_SESSION['user'])) {
 
 <div class="container">
 <h2 class="m-1">ラーメン屋</h2>
+<p>ラーメン屋の近くでチェックイン！</p>
 <script>
 function getRamen() {
 	if (navigator.geolocation) {
