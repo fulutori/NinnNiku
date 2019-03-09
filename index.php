@@ -55,17 +55,17 @@ $id = $_SESSION['user'];
 	</div>
 	<div id="top_menu_buttons" class="w-100">
 		<div id="buttons_sub" class="h-100 w-50">
-			<a href="ninnniku.php">
-				<div id="to_ninnniku_btn" class="h-50  m-0">今いるラーメン店にチェックイン</div>
-			</a>
-			<a href="ranking.php">
-				<div id="to_ranking_btn" class="h-50  m-0">ランキング</div>
-			</a>
+			<div class="p-1 h-50"><a href="ninnniku.php">
+				<div id="to_ninnniku_btn" class="h-100 m-0">今いるラーメン店にチェックイン</div>
+			</a></div>
+			<div class="p-1 h-50"><a href="ranking.php">
+				<div id="to_ranking_btn" class="h-100 m-0">ランキング</div>
+			</a></div>
 		</div>
 		<div id="buttons_main"class=" h-100 w-50">
-			<a href="find.php">
+			<div class="p-1 h-100"><a href="find.php">
 				<div id="to_find_btn" class="h-100 m-0">ラーメン店を探す</div>					
-			</a>
+			</a></div>
 		</div>
 </div>
 </div>
