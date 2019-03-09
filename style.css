@@ -24,7 +24,7 @@ a:hover{
         transform: translateY(-0.3em);
 }
 
-.achv{display: inline;}
+.achv{display: inline-block;}
 .achv_cls0{
         background-color: green;
 }
@@ -36,4 +36,9 @@ a:hover{
 }
 .achv_cls3{
         background-color: gold;
+}
+
+.bg_gray_t{
+        display: inline-block;
+        background-color: rgba(0, 0, 0, 0.25);
 }
