@@ -26,11 +26,11 @@ if ($stmt) {
 		$stmt2->execute([$user_id, $ramen_num]);
 		$result2 = $stmt2->fetchColumn();
 		if ($result2 == 0) {
-			echo "<div class=\"card container p-3\"><class class=\"row\">
-			<div class=\"col-12\">".$shop_name."(未チェックイン)</div>
+			echo "<div class=\"card container p-3 m-1\"><class class=\"row\">
+			<div class=\"col-12\">".$shop_name."<span class=\"badge badge-info badge-pill mx-1\">未</span></div>
 			</div>";
 		} else {
-			echo "<div class=\"card container p-3\"><class class=\"row\">
+			echo "<div class=\"card container p-3 m-1\"><class class=\"row\">
 			<div class=\"col-12\">".$shop_name."</div>
 			</div>";
 		}
