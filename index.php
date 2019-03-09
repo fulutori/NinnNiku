@@ -15,6 +15,22 @@ $id = $_SESSION['user'];
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+<style type="text/css">
+#top_menu_buttons{
+    height:50vh;
+}
+#buttons_sub{
+    float: left;
+    margin: 0;
+}
+#buttons_main{
+    float: left;
+    margin: 0;
+}
+#to_ninnniku_btn{background-color: red;}
+#to_ranking_btn{background-color: green;}
+#to_find_btn{background-color: blue;}
+</style>
 </head>
 <body>
 <div class="container">
@@ -37,18 +53,20 @@ $id = $_SESSION['user'];
 		echo "<p>ID: ".$user."</p>\n";
 		?>
 	</div>
-	<div id="top_menu_buttons">
+	<div id="top_menu_buttons" class="w-100">
 		<div id="buttons_sub" class="h-100 w-50">
 			<a href="ninnniku.php">
-				<div id="" class="h-50 card">今いるラーメン店にチェックイン</div>
+				<div id="to_ninnniku_btn" class="h-50  m-0">今いるラーメン店にチェックイン</div>
 			</a>
 			<a href="ranking.php">
-				<div id="" class="h-50 card">ランキング</div>
+				<div id="to_ranking_btn" class="h-50  m-0">ランキング</div>
 			</a>
 		</div>
-		<a href="find.php">
-			<div id="buttons_main"class=" h-100 w-50 card">ラーメン店を探す</div>
-		</a>
+		<div id="buttons_main"class=" h-100 w-50">
+			<a href="find.php">
+				<div id="to_find_btn" class="h-100 m-0">ラーメン店を探す</div>					
+			</a>
+		</div>
 </div>
 </div>
 <div id="setting" class="col-12">
