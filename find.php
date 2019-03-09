@@ -17,13 +17,12 @@ if(!isset($_SESSION['user'])) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" media="screen" href="style.css" />
 </head>
 <body>
+<?php include("header.php"); ?>
 <div class="container">
-<div style="display: flex; justify-content: space-between; align-items: flex-end;">
-<h2>近くのラーメン店</h2>
-<?php if ($user_id!="") echo $user_id; ?>
-</div>
+<h2 class="m-1">近くのラーメン店</h2>
 <script>
 function getRamen() {
 	if (navigator.geolocation) {
