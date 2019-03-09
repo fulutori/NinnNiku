@@ -21,7 +21,7 @@ if(!isset($_SESSION['user'])) {
 <body>
 <div class="container">
 <div style="display: flex; justify-content: space-between; align-items: flex-end;">
-<h2>ラーメン屋</h2>
+<h2 class="text-center">ラーメン屋</h2>
 <?php if ($user_id!="") echo $user_id; ?>
 </div>
 <script>

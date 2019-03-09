@@ -16,8 +16,18 @@ $user_id = $_SESSION['user'];
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<div class="container">
+	<a class="navbar-brand" href="#">ブランド</a>
+	
+	<div class="collapse navbar-collapse" id="Navber">
+		
+	</div>
+	</div>
+</nav>
+
 <div class="container">
-<h2>ランキング</h2>
+<h2 class="text-center">ランキング</h2>
 <hr>
 <?php
 $dsn = 'mysql:host='.$host.';dbname='.$dbname.';charset=utf8';
@@ -32,9 +42,9 @@ foreach ($stmt as $row) {
 	if ($rank <= 100) {
 		if ($id == $user_id) {
 			echo "<div class=\"card container p-3\"><class class=\"row\">
-			<div class=\"col-4\">".$rank."位</div>
-			<div class=\"col-4\">".$id."</div>
-			<div class=\"col-4\">".$point."points</div>
+			<div class=\"col-4 text-center\">".$rank."位</div>
+			<div class=\"col-4 text-center\">".$id."</div>
+			<div class=\"col-4 text-center\">".$point."points</div>
 			</div>";
 		} else {
 			echo "<div class=\"card container p-3\"><class class=\"row\">
