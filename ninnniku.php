@@ -16,22 +16,14 @@ if(!isset($_SESSION['user'])) {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
-<style>
-body {
-	margin-right: auto;
-	margin-left: auto;
-	width: 90%;
-	max-width: 600px;
-}
-</style>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
+<div class="container">
 <div style="display: flex; justify-content: space-between; align-items: flex-end;">
 <h2>ラーメン屋</h2>
 <?php if ($user_id!="") echo $user_id; ?>
 </div>
-<hr style="margin-top: 10px">
 <script>
 function getRamen() {
 	if (navigator.geolocation) {
@@ -64,9 +56,10 @@ function getRamen() {
 <div id="address"></div>
 <br>
 <br>
-<input type="button" value="チェックイン" class="btn btn-default" onclick="getRamen();">
+<input type="button" value="チェックイン" class="btn btn-primary" onclick="getRamen();">
 <br>
 <br>
 <a href="./">トップページへ戻る</a>
+</div>
 </body>
 </html>
