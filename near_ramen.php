@@ -21,19 +21,18 @@ if ($stmt) {
 	foreach ($stmt as $row) {
 		$ramen_num = $row['ramen_num'];
 		$shop_name = $row['shop_name'];
-		$sql = "SELECT COUNT(*) FROM ".$user_id." WHERE ramen_num=".$ramen_num;
-		$stmt = $pdo->query($sql);
-		if ($stmt) {
-			$result = $stmt->fetch(PDO::FETCH_ASSOC);
-			if ($result != 0) {
-				echo "<div class=\"card container p-3\"><class class=\"row\">
-				<div class=\"col-12\">".$shop_name."<span class=\"badge badge-info badge-pill\">未</span></div>
-				</div>";
-			} else {
-				echo "<div class=\"card container p-3\"><class class=\"row\">
-				<div class=\"col-12\">".$shop_name."</div>
-				</div>";	
-			}
+		$sql = "SELECT COUNT(*) FROM log WHERE id=? AND ramen_num=?";
+		$stmt2 = $pdo->prepare($sql);
+		$stmt2->execute([$user_id, $ramen_num]);
+		$result2 = $stmt2->fetchColumn();
+		if ($result2 == 0) {
+			echo "<div class=\"card container p-3\"><class class=\"row\">
+			<div class=\"col-12\">".$shop_name."(未チェックイン)</div>
+			</div>";
+		} else {
+			echo "<div class=\"card container p-3\"><class class=\"row\">
+			<div class=\"col-12\">".$shop_name."</div>
+			</div>";
 		}
 		$rank++;
 	}
