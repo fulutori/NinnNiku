@@ -5,16 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ログイン</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<style>
-body {
-	margin-right: auto;
-	margin-left: auto;
-	width: 90%;
-	max-width: 600px;
-}
-</style>
+
 </head>
 <body>
+<div class="container">
 <h2>ログイン</h2>
 <hr>
 <form method="post">
@@ -29,6 +23,7 @@ body {
 <br>
 <a href="signup.php">ユーザー登録はこちら</a>
 </form>
+</div>
 </body>
 </html>
 <?php
