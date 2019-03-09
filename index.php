@@ -19,7 +19,7 @@ $user_id = $id;
 <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
 <style type="text/css">
 @media (min-width: 992px) { 
-	#name{height:40vh;}	
+	#name{min-height:40vh;}	
  }
 #top_menu_buttons{
     height:50vh;
@@ -48,7 +48,8 @@ $user_id = $id;
 	<br><br><br><br><br><br><br><br><br>
 </div>
 <div class="col-12 col-lg-6">
-	<div id="name " class="container m-5 ml-0">
+	<div id="name " class="container my-5">
+		<div class="p-3 m-0 bg_gray_t">
 		<?php if ($user_id!="") echo "<div><h4>ID:".$user_id."</h4></div>";
 		include_once 'dbconnect.php';
 		$dsn = 'mysql:host='.$host.';dbname='.$dbname.';charset=utf8';
@@ -63,9 +64,10 @@ $user_id = $id;
 		$stmt->execute([$achv]);
 		$result = $stmt->fetch(PDO::FETCH_ASSOC);
 		$achv_name=$result['achv_name'];//称号の名前
-		$achv_class=0;//称号のクラス
+		$achv_class=$result['rare'];//称号のクラス
 		echo "<div class=\"rounded px-3 py-1 m-auto text-white achv achv_cls".$achv_class."\">".$achv_name."</div>"
 		?>
+		</div>
 	</div>
 	<div id="top_menu_buttons" class="w-100">
 		<div id="buttons_sub" class="h-100 w-50">
