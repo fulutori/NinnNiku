@@ -10,7 +10,7 @@ $pdo = new PDO($dsn, $username, $password, array(PDO::ATTR_ERRMODE => PDO::ERRMO
 $ido = $_POST['ido'];
 $keido = $_POST['keido'];
 $user_id = $_POST['user_id'];
-$sql = 'SELECT * FROM shop WHERE abs(latitude - ?) < 0.01 AND abs(longitude - ?) < 0.01 ORDER BY abs(latitude - ?) + abs(longitude - ?) limit 1';
+$sql = 'SELECT * FROM shop WHERE abs(latitude - ?) < 0.0003 AND abs(longitude - ?) < 0.0005 ORDER BY abs(latitude - ?) + abs(longitude - ?) limit 1';
 $stmt = $pdo->prepare($sql);
 if ($stmt->execute([$ido, $keido, $ido, $keido])) {
 	$result = $stmt->fetch(PDO::FETCH_ASSOC);
