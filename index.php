@@ -24,23 +24,32 @@ body {
 </style>
 </head>
 <body>
-<h2>マイページ</h2>
-<hr>
-<?php
-$dsn = 'mysql:host='.$host.';dbname='.$dbname.';charset=utf8';
-$pdo = new PDO($dsn, $username, $password, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-$sql = 'SELECT * FROM users WHERE id=?';
-$stmt = $pdo->prepare($sql);
-$stmt->execute([$id]);
-$pdo = null;
-$result = $stmt->fetch(PDO::FETCH_ASSOC);
-$user = $result['id'];
-echo "<p>ID: ".$user."</p>\n";
-?>
-<br>
-<p><a href="change.php">パスワードを変更</a></p>
-<p><a href="signout.php?logout">ログアウト</a></p>
-<br>
-<br>
+<h2>トップページ</h2>
+<div id="name">
+	<?php
+	$dsn = 'mysql:host='.$host.';dbname='.$dbname.';charset=utf8';
+	$pdo = new PDO($dsn, $username, $password, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+	$sql = 'SELECT * FROM users WHERE id=?';
+	$stmt = $pdo->prepare($sql);
+	$stmt->execute([$id]);
+	$pdo = null;
+	$result = $stmt->fetch(PDO::FETCH_ASSOC);
+	$user = $result['id'];
+	echo "<p>ID: ".$user."</p>\n";
+	?>
+</div>
+<div>
+	今いるラーメン店にチェックイン
+</div>
+<div>
+	ラーメン店を探す
+</div>
+<div>
+	
+</div>
+<div id="setting">
+	<p><a href="change.php">パスワードを変更</a></p>
+	<p><a href="signout.php?logout">ログアウト</a></p>
+</div>
 </body>
 </html>
