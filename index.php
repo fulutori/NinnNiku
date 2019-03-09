@@ -19,9 +19,7 @@ $user_id = $id;
 <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
 <style type="text/css">
 @media (min-width: 992px) { 
-	#name{
-    height:40vh;
-}	
+	#name{height:40vh;}	
  }
 #top_menu_buttons{
     height:50vh;
@@ -40,7 +38,7 @@ $user_id = $id;
 </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-maincolor text-color-light">
 	<div class="container">
 	<a class="navbar-brand" href="index.php">ブランド</a>
 	<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#Navber" aria-controls="Navber" aria-expanded="false" aria-label="ナビゲーションの切替">
