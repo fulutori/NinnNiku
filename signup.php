@@ -55,8 +55,7 @@ if(isset($_POST['signup'])) {
 	$stmt = $pdo->prepare($sql);
 	if($stmt->execute([$user, $pass])) {
 		$sql = "CREATE TABLE ".$user. "(
-			`ramen_num` INT(6) UNSIGNED ZEROFILL NOT NULL,
-			`status` INT(1) NOT NULL
+			`ramen_num` INT(6) UNSIGNED ZEROFILL NOT NULL
 			) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
 		if($pdo->query($sql)) {
 			?><br><br><div class="alert alert-success" role="alert">登録しました</div><?php
