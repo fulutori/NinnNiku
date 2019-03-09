@@ -42,7 +42,7 @@ $user_id = $id;
 <?php include("header.php"); ?>
 
 <div class="container ">
-<h2 class="m-1">マイページ</h2>
+<h2 class="m-1">トップページ</h2>
 <div class="row">
 <div id="character" class="col-6">
 	<br><br><br><br><br><br><br><br><br>
