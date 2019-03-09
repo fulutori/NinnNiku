@@ -19,7 +19,7 @@ if(!isset($_SESSION['user'])) {
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
 </head>
-<body>
+<body style="padding-top:4.5rem;">
 <?php include("header.php"); ?>
 <div class="container">
 <h2 class="m-1">近くのラーメン店</h2>
