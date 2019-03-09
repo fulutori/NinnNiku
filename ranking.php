@@ -25,13 +25,13 @@ $user_id = $_SESSION['user'];
 <?php
 $dsn = 'mysql:host='.$host.';dbname='.$dbname.';charset=utf8';
 $pdo = new PDO($dsn, $username, $password, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-$sql = 'SELECT id,point,achievement FROM users ORDER BY point DESC';
+$sql = 'SELECT id,point,achv FROM users ORDER BY point DESC';
 $stmt = $pdo->query($sql);
 $rank=1;
 foreach ($stmt as $row) {
 	$id = $row['id'];
 	$point = $row['point'];
-	$achievement = $row['achievement'];
+	$achievement = $row['achv'];
 	if ($rank <= 100) {
 		if ($id == $user_id) {
 			echo "<div class=\"card container p-3 m-1\"><class class=\"row\">
