@@ -64,15 +64,21 @@ $user_id = $id;
 	<div id="top_menu_buttons" class="w-100">
 		<div id="buttons_sub" class="h-100 w-50">
 			<div class="p-1 h-50"><a href="ninnniku.php">
-				<div id="to_ninnniku_btn" class="h-100 m-0 p-1 text-light rounded">今いるラーメン店にチェックイン</div>
+				<div id="to_ninnniku_btn" class="menu_btn h-100 m-0 p-1 text-light rounded ">
+					<span>今いるラーメン店にチェックイン</span><img src="assets/icon_check.svg"/>
+				</div>
 			</a></div>
 			<div class="p-1 h-50"><a href="ranking.php">
-				<div id="to_ranking_btn" class="h-100 m-0 p-1 text-light rounded">ランキング</div>
+				<div id="to_ranking_btn" class="menu_btn h-100 m-0 p-1 text-light rounded">
+					<span>ランキング</span><img src="assets/icon_crown.svg"/>
+				</div>
 			</a></div>
 		</div>
 		<div id="buttons_main"class=" h-100 w-50">
 			<div class="p-1 h-100"><a href="find.php">
-				<div id="to_find_btn" class="h-100 m-0 p-1 text-light rounded">ラーメン店を探す</div>					
+				<div id="to_find_btn" class="menu_btn h-100 m-0 p-1 text-light rounded hov_anim">
+					<span>ラーメン店を探す</span><img src="assets/icon_ramen.svg"/>
+				</div>					
 			</a></div>
 		</div>
 </div>
