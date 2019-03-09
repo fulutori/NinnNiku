@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="container">
-<h2>新規登録</h2>
+<h2 class="m-1">新規登録</h2>
 <hr>
 <div class="form-group">
 <form method="post">
@@ -54,12 +54,7 @@ if(isset($_POST['signup'])) {
 	$sql = "INSERT INTO users(id,password) VALUES(?, ?)";
 	$stmt = $pdo->prepare($sql);
 	if($stmt->execute([$user, $pass])) {
-		$sql = "CREATE TABLE ".$user. "(
-			`ramen_num` INT(6) UNSIGNED ZEROFILL NOT NULL
-			) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
-		if($pdo->query($sql)) {
-			?><br><br><div class="alert alert-success" role="alert">登録しました</div><?php
-		}
+		?><br><br><div class="alert alert-success" role="alert">登録しました</div><?php
 	} else {
 		?><br><br><div class="alert alert-danger" role="alert">エラーが発生しました</div><?php
 	}

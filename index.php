@@ -5,6 +5,8 @@ if(!isset($_SESSION['user'])) {
 	header("Location: signin.php");
 }
 $id = $_SESSION['user'];
+
+$user_id = $id;
 ?>
 <!DOCTYPE html>
 <html>
@@ -38,8 +40,22 @@ $id = $_SESSION['user'];
 </style>
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<div class="container">
+	<a class="navbar-brand" href="index.php">ブランド</a>
+	<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#Navber" aria-controls="Navber" aria-expanded="false" aria-label="ナビゲーションの切替">
+		<span class="navbar-toggler-icon"></span>
+  	</button>
+	
+	<div class="collapse navbar-collapse " id="Navber">
+		<div class="my-2 my-lg-0 ml-auto">
+		<?php if ($user_id!="") echo $user_id; ?>
+		</div>
+	</div>
+	</div>
+</nav>
 <div class="container">
-<h2>トップページ</h2>
+<h2 class="m-1">トップページ</h2>
 <div class="row">
 <div id="character" class="col-6">
 	<br><br><br><br><br><br><br><br><br>

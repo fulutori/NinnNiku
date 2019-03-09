@@ -19,11 +19,23 @@ if(!isset($_SESSION['user'])) {
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<div class="container">
+	<a class="navbar-brand" href="index.php">ブランド</a>
+	<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#Navber" aria-controls="Navber" aria-expanded="false" aria-label="ナビゲーションの切替">
+		<span class="navbar-toggler-icon"></span>
+  	</button>
+	
+	<div class="collapse navbar-collapse " id="Navber">
+		<div class="my-2 my-lg-0 ml-auto">
+		<?php if ($user_id!="") echo $user_id; ?>
+		</div>
+	</div>
+	</div>
+</nav>
+
 <div class="container">
-<div style="display: flex; justify-content: space-between; align-items: flex-end;">
-<h2 class="text-center">ラーメン屋</h2>
-<?php if ($user_id!="") echo $user_id; ?>
-</div>
+<h2 class="m-1">ラーメン屋</h2>
 <script>
 function getRamen() {
 	if (navigator.geolocation) {

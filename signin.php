@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="container">
-<h2>ログイン</h2>
+<h2 class="m-1">ログイン</h2>
 <hr>
 <form method="post">
 <div class="form-group">
