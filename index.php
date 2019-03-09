@@ -33,7 +33,7 @@ $user_id = $id;
     margin: 0;
 }
 #to_ninnniku_btn{background-color: #720C08;}
-#to_ranking_btn{background-color: #39BF3E;}
+#to_ranking_btn{background-color: #F7CF03;}
 #to_find_btn{background-color: #C41713;}
 </style>
 </head>
