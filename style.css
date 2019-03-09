@@ -23,3 +23,17 @@ a:hover{
         box-shadow: 0 3px 16px 0 rgba(0, 0, 0, 0.25);
         transform: translateY(-0.3em);
 }
+
+.achv{display: inline;}
+.achv_cls0{
+        background-color: green;
+}
+.achv_cls1{
+        background-color: brown;
+}
+.achv_cls2{
+        background-color:silver;
+}
+.achv_cls3{
+        background-color: gold;
+}
