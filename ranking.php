@@ -34,13 +34,13 @@ foreach ($stmt as $row) {
 	$achievement = $row['achievement'];
 	if ($rank <= 100) {
 		if ($id == $user_id) {
-			echo "<div class=\"card container p-3\"><class class=\"row\">
+			echo "<div class=\"card container p-3 m-1\"><class class=\"row\">
 			<div class=\"col-4 text-center\">".$rank."位</div>
 			<div class=\"col-4 text-center\">".$id."</div>
 			<div class=\"col-4 text-center\">".$point."points</div>
 			</div>";
 		} else {
-			echo "<div class=\"card container p-3\"><class class=\"row\">
+			echo "<div class=\"card container p-3 m-1\"><class class=\"row\">
 			<div class=\"col-4\">".$rank."位</div>
 			<div class=\"col-4\">".$id."</div>
 			<div class=\"col-4\">".$point."points</div>
@@ -48,7 +48,7 @@ foreach ($stmt as $row) {
 		}
 	} else {
 		if ($id == $user_id) {
-			echo "<div class=\"card container p-3\"><class class=\"row\">
+			echo "<div class=\"card container p-3 m-1\"><class class=\"row\">
 			<div class=\"col-4\">".$rank."位</div>
 			<div class=\"col-4\">".$id."</div>
 			<div class=\"col-4\">".$point."points</div>
