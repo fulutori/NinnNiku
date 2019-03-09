@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-maincolor ">
+<nav class="navbar navbar-expand-lg navbar-light bg-maincolor shadow navbar-light fixed-top">
 	<div class="container">
 	<a class="navbar-brand text-white" href="index.php">ブランド</a>
 	<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#Navber" aria-controls="Navber" aria-expanded="false" aria-label="ナビゲーションの切替">
