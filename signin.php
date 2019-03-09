@@ -50,7 +50,7 @@ if(isset($_POST['login'])) {
 		?><div class="alert alert-danger" role="alert">このユーザーは登録されていません</div><?php
 		exit();
 	}
-	$db_hashed_pwd = $result['pass'];
+	$db_hashed_pwd = $result['password'];
 	$user_id = $result['id'];
 	if (password_verify($pass, $db_hashed_pwd)) {
 		$_SESSION['user'] = $user_id;
