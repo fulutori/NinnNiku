@@ -27,7 +27,7 @@ if ($stmt) {
 			$result = $stmt->fetch(PDO::FETCH_ASSOC);
 			if ($result != 0) {
 				echo "<div class=\"card container p-3\"><class class=\"row\">
-				<div class=\"col-12\">".$shop_name."<span class=\"label label-primary\">未</span></div>
+				<div class=\"col-12\">".$shop_name."<span class=\"badge badge-info badge-pill\">未</span></div>
 				</div>";
 			} else {
 				echo "<div class=\"card container p-3\"><class class=\"row\">
