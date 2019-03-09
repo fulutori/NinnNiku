@@ -22,10 +22,10 @@ body {
 <input type="text" class="form-control" name="user" maxlength="30" placeholder="ID(30字まで)" required />
 </div>
 <div class="form-group">
-<input type="password" class="form-control" name="pass" maxlength="256" placeholder="パスワード(半角英数字記号256文字まで)" required />
+<input type="password" class="form-control" name="pass" maxlength="255" placeholder="パスワード(半角英数字記号255文字まで)" required />
 </div>
 <div class="form-group">
-<input type="password" class="form-control" name="re_pass" maxlength="256" placeholder="パスワード(再入力)" required />
+<input type="password" class="form-control" name="re_pass" maxlength="255" placeholder="パスワード(再入力)" required />
 </div>
 <button type="submit" class="btn btn-default" name="signup">登録</button>
 <br>
@@ -57,7 +57,7 @@ if(isset($_POST['signup'])) {
 			exit();
 		}
 	}
-	$sql = "INSERT INTO users(id,pass) VALUES(?, ?)";
+	$sql = "INSERT INTO users(id,password) VALUES(?, ?)";
 	$stmt = $pdo->prepare($sql);
 	if($stmt->execute([$user, $pass])) {
 		?><br><br><div class="alert alert-success" role="alert">登録しました</div><?php
