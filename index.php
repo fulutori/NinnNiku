@@ -37,7 +37,7 @@ $user_id = $id;
 #to_find_btn{background-color: #C41713;}
 </style>
 </head>
-<body>
+<body style="padding-top:4.5rem;">
 
 <?php include("header.php"); ?>
 
