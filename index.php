@@ -31,7 +31,7 @@ $point = $result['point'];
 #name{min-height:30vh;padding-top:20vh;}	
 @media (max-width: 991.98px) { 
 	#character{position: absolute;}
-	#character .img{ wdth:100% }
+	#character .img{ width:100% ;object-fit: contain;}
 }
 #top_menu_buttons{
 	height:50vh;
@@ -58,9 +58,9 @@ $point = $result['point'];
 <div id="character" class="col-12 col-lg-6 text-center">
 <?php
 	if ($point >= 50) {
-		echo '<img src="assets/neko2.png" class="h-100 w-100 m-auto"/>';
+		echo '<img src="assets/neko2.png" class="h-100 m-auto"/>';
 	} else {
-		echo '<img src="assets/neko1.png" class="h-100 w-100 m-auto"/>';
+		echo '<img src="assets/neko1.png" class="h-100 m-auto"/>';
 	}
 ?>
 </div>
@@ -68,7 +68,7 @@ $point = $result['point'];
 	<div id="name" class="container my-1">
 		<div class="p-3 m-0 bg_gray_t">
 		<?php
-		if ($user_id!="") echo "<div><h4>ID:".$user_id."</h4></div>";
+		if ($user_id!="") echo "<div><h4 class=\"text-white\">ID:".$user_id."</h4></div>";
 		$sql = "SELECT * FROM ach_db WHERE achv_id=?";
 		$stmt = $pdo->prepare($sql);
 		$stmt->execute([$achv]);
