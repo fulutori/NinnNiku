@@ -90,6 +90,28 @@ if ($stmt->execute([$ido, $keido])) {
 				$stmt8 = $pdo->prepare($sql8);
 				$stmt8->execute([$user_id,$achv_id2]);
 			}
+
+			//称号の選択
+			$sql9 = "SELECT DISTINCT * FROM ach_log WHERE id=?";
+			$stmt9 = $pdo->prepare($sql9);
+			$stmt9->execute([$user_id]);
+			$max_rare = 0;
+			$next_achv = 1;
+			foreach($stmt9 as $row){
+				$now_achv = $row['achv_id'];
+				$sql10 = "SELECT * FROM ach_db WHERE achv_id=?";
+				$stmt10 = $pdo->prepare($sql10);
+				$stmt10->execute([$now_achv]);
+				$result10 = $stmt10->fetch(PDO::FETCH_ASSOC);
+				if ($result10['rare'] > $max_rare) {
+					$max_rare = $result10['rare'];
+					$next_achv = $result10['achv_id'];
+				}
+			}
+
+			$sql11 = "UPDATE users SET achv=? WHERE id=?";
+			$stmt11 = $pdo->prepare($sql11);
+			$stmt11->execute([$next_achv,$user_id]);
 		}
 	}
 }
