@@ -56,11 +56,11 @@ if ($stmt->execute([$ido, $keido])) {
 
 			//称号付与操作(ポイント数)
 			$achv_id = -1;
-			if ($result5 == 30) {
+			if ($total_point == 30) {
 				$achv_id = 3;
-			} else if ($result5 == 20) {
+			} else if ($total_point == 20) {
 				$achv_id = 2;
-			} else if ($result5 == 10) {
+			} else if ($total_point == 10) {
 				$achv_id = 1;
 			}
 
