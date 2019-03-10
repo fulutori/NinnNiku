@@ -24,17 +24,17 @@ a:hover{
         transform: translateY(-0.3em);
 }
 
-.achv{display: inline-block;}
-.achv_cls0{
+.achv{display: inline-block; }
+.achv_cls1{
         background-color: green;
 }
-.achv_cls1{
+.achv_cls2{
         background-color: brown;
 }
-.achv_cls2{
+.achv_cls3{
         background-color:silver;
 }
-.achv_cls3{
+.achv_cls4{
         background-color: gold;
 }
 
