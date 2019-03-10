@@ -68,7 +68,7 @@ $user_id = $id;
 			echo "<div class=\"rounded px-3 py-1 m-auto text-white achv achv_cls".$achv_class."\">".$achv_name."</div>"
 			?>
 		</div>
-		<div class="col-6">
+		<div class="col-6 h2">
 			<?php echo $point."point";?>
 		</div>
 	</div>
