@@ -78,23 +78,29 @@ $user_id = $id;
 	<h4 class="card-title">獲得した称号</h4>
 	<div class="container"><div class="row">
 			<?php
-				$cnt=0;
+				$cnt=1;
 				while(1){
-				$sql = "SELECT * FROM ach_db WHERE achv_id=?";
-				$stmt = $pdo->prepare($sql);
-				$stmt->execute([$cnt]);
-				$result = $stmt->fetch(PDO::FETCH_ASSOC);
-				if($result['achv_name']==""){break;}
-				$achv_name=$result['achv_name'];//称号の名前
-				$achv_class=$result['rare'];//称号のクラス
-				echo "<div class=\"col-12 col-lg-6 text-center\">";
-				if(false){
-					echo "<div class=\"rounded px-3 py-1 m-1 text-white achv achv_cls".$achv_class."\">".$achv_name;
-				}else{
-					echo "<div class=\"rounded px-3 py-1 m-1 text-white achv bg-dark \">".$achv_name;
-				}
-				echo "</div></div>";
-				$cnt++;
+					$sql = "SELECT * FROM ach_db WHERE achv_id=?";
+					$stmt = $pdo->prepare($sql);
+					$stmt->execute([$cnt]);
+					$result = $stmt->fetch(PDO::FETCH_ASSOC);
+					if($result['achv_name']==""){break;}
+					$achv_name=$result['achv_name'];//称号の名前
+					$achv_class=$result['rare'];//称号のクラス
+
+					$sql2 = "SELECT COUNT(*) FROM ach_log WHERE achv_id=? AND id=?";
+					$stmt2 = $pdo->prepare($sql2);
+					$stmt2->execute([$cnt, $user_id]);
+					$result2 = $stmt2->fetchColumn();
+
+					echo "<div class=\"col-12 col-lg-6 text-center\">";
+					if($result2 > 0){
+						echo "<div class=\"rounded px-3 py-1 m-1 text-white achv achv_cls".$achv_class."\">".$achv_name;
+					}else{
+						echo "<div class=\"rounded px-3 py-1 m-1 text-white achv bg-dark \">".$achv_name;
+					}
+					echo "</div></div>";
+					$cnt++;
 				}
 			?>
 			</div></div>
