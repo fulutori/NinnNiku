@@ -35,6 +35,53 @@ if ($stmt->execute([$ido, $keido])) {
 				echo $shop_name;	
 			}
 			echo "</div>";
+
+			//ポイント付与操作
+			$sql4 = "UPDATE users SET point=point+1 WHERE id=?";
+			$stmt4 = $pdo->prepare($sql4);
+			$stmt4->execute([$user_id]);
+
+			//称号付与操作(ポイント数)
+			$sql5 = "SELECT point FROM users WHERE id=?";
+			$stmt5 = $pdo->prepare($sql5);
+			$stmt5->execute([$user_id]);
+			$result5 = $stmt5->fetchColumn();
+
+			$achv_id = -1;
+			if ($result5 == 30) {
+				$achv_id = 3;
+			} else if ($result5 == 20) {
+				$achv_id = 2;
+			} else if ($result5 == 10) {
+				$achv_id = 1;
+			}
+
+			if ($achv_id != -1) {
+				$sql6 = "INSERT INTO ach_log(id,achv_id) VALUES(?, ?)";
+				$stmt6 = $pdo->prepare($sql6);
+				$stmt6->execute([$user_id,$achv_id]);
+			}
+
+			//称号付与操作(店舗数)
+			$sql7 = "SELECT COUNT(DISTINCT ramen_num) FROM log WHERE id=?";
+			$stmt7 = $pdo->prepare($sql7);
+			$stmt7->execute([$user_id]);
+			$result7 = $stmt7->fetchColumn();
+
+			$achv_id2 = -1;
+			if ($result7 == 10) {
+				$achv_id == 6;
+			} else if ($result7 == 5) {
+				$achv_id == 5;
+			} else if ($result7 == 2) {
+				$achv_id == 4;
+			}
+
+			if ($achv_id2 != -1) {
+				$sql8 = "INSERT INTO ach_log(id,achv_id) VALUES(?, ?)";
+				$stmt8 = $pdo->prepare($sql8);
+				$stmt8->execute([$user_id,$achv_id2]);
+			}
 		}
 	}
 }
