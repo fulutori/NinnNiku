@@ -27,26 +27,32 @@ if ($stmt->execute([$ido, $keido])) {
 			$stmt3 = $pdo->prepare($sql);
 			$stmt3->execute([$user_id, $ramen_num]);
 			$result3 = $stmt3->fetchColumn();
-			echo "<p><i class=\"fas fa-check text-success\"></i>チェックイン成功！</p>
-				<div class=\"card p-2\">";
+			
+			//ポイント数確認
+			$sql5 = "SELECT point FROM users WHERE id=?";
+			$stmt5 = $pdo->prepare($sql5);
+			$stmt5->execute([$user_id]);
+			$result5 = $stmt5->fetchColumn();
+			
+			echo "<p><i class=\"fas fa-check text-success\"></i>チェックイン成功！ ";
 			if ($result3 == 1) {
+				$add_point = 10;
+				echo "+".$add_point."point（Total: ".$result5."point）</p><div class=\"card p-2\">";
 				echo $shop_name."<span class=\"badge badge-info badge-pill mx-1\">未</span></div>";
 			} else {
+				$add_point = 5;
+				echo "+".$add_point."point（Total: ".$result5."point）</p><div class=\"card p-2\">";
 				echo $shop_name;	
 			}
 			echo "</div>";
 
 			//ポイント付与操作
-			$sql4 = "UPDATE users SET point=point+1 WHERE id=?";
+			$sql4 = "UPDATE users SET point=point+? WHERE id=?";
 			$stmt4 = $pdo->prepare($sql4);
-			$stmt4->execute([$user_id]);
+			$stmt4->execute([$add_point,$user_id]);
+
 
 			//称号付与操作(ポイント数)
-			$sql5 = "SELECT point FROM users WHERE id=?";
-			$stmt5 = $pdo->prepare($sql5);
-			$stmt5->execute([$user_id]);
-			$result5 = $stmt5->fetchColumn();
-
 			$achv_id = -1;
 			if ($result5 == 30) {
 				$achv_id = 3;
