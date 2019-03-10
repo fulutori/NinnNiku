@@ -14,7 +14,7 @@ $user_id = $_POST['user_id'];
 #latitude(緯度)は0.00027778で31メートルぐらい
 #longitude(経度)は計算が難しいので緯度よりも多めに指定する
 # WHERE abs(latitude - ".$ido.") < 0.015 AND abs(longitude - ".$keido.") < 0.03
-$sql = "SELECT * FROM shop WHERE abs(latitude - ".$ido.") < 0.015 AND abs(longitude - ".$keido.") < 0.03 ORDER BY abs(latitude - ".$ido.") + abs(longitude - ".$keido.") limit 3";
+$sql = "SELECT * FROM shop WHERE abs(latitude - ".$ido.") < 0.015 AND abs(longitude - ".$keido.") < 0.025 ORDER BY abs(latitude - ".$ido.") + abs(longitude - ".$keido.") limit 3";
 $stmt = $pdo->query($sql);
 if ($stmt) {
 	$rank=1;
