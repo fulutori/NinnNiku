@@ -17,6 +17,8 @@ $user_id = $id;
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+<link rel="shortcut icon" href="assets/favicon.ico" />
+<link rel="icon" type="image/vnd.microsoft.icon" href="assets/favicon.ico"/>
 <style type="text/css">
 @media (min-width: 992px) { 
 	#name{min-height:40vh;}	
@@ -136,14 +138,16 @@ $user_id = $id;
 		</div>
 	</div>
 </div>
+<!--
 <div class="card m-1 col-lg-6">
 	<h4 class="card-title">キャラクタ</h4>
-	<!--phpで全表示を書く-->
+	
 </div>
 <div class="card m-1 col-lg-6">
 	<h4 class="card-title">傾向</h4>
-	<!--phpで全表示を書く-->
+	
 </div>
+-->
 </div>
 <div id="setting" class="col-12 btn-group d-flex my-5" role="group">
 	<a class="btn btn-outline-secondary w-100" href="./">トップページへ戻る</a>
