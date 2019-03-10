@@ -37,11 +37,13 @@ if ($stmt->execute([$ido, $keido])) {
 			echo "<p><i class=\"fas fa-check text-success\"></i>チェックイン成功！ ";
 			if ($result3 == 1) {
 				$add_point = 10;
-				echo "+".$add_point."point（Total: ".$result5."point）</p><div class=\"card p-2\">";
+				$total_point = $result5+$add_point;
+				echo "+".$add_point."point（Total: ".$total_point."point）</p><div class=\"card p-2\">";
 				echo $shop_name."<span class=\"badge badge-info badge-pill mx-1\">未</span></div>";
 			} else {
 				$add_point = 5;
-				echo "+".$add_point."point（Total: ".$result5."point）</p><div class=\"card p-2\">";
+				$total_point = $result5+$add_point;
+				echo "+".$add_point."point（Total: ".$total_point."point）</p><div class=\"card p-2\">";
 				echo $shop_name;	
 			}
 			echo "</div>";
