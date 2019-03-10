@@ -77,12 +77,12 @@ if ($stmt->execute([$ido, $keido])) {
 			$result7 = $stmt7->fetchColumn();
 
 			$achv_id2 = -1;
-			if ($result7 == 10) {
-				$achv_id == 6;
-			} else if ($result7 == 5) {
-				$achv_id == 5;
-			} else if ($result7 == 2) {
-				$achv_id == 4;
+			if ($result7 >= 10) {
+				$achv_id = 6;
+			} else if ($result7 >= 5) {
+				$achv_id = 5;
+			} else if ($result7 >= 2) {
+				$achv_id = 4;
 			}
 
 			if ($achv_id2 != -1) {
