@@ -18,11 +18,13 @@ $user_id = $id;
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
 <style type="text/css">
-@media (min-width: 992px) { 
-	#name{min-height:40vh;}	
- }
+#name{min-height:30vh;padding-top:20vh;}	
+@media (max-width: 991.98px) { 
+	#character{position: absolute;}
+	#character .img{ wdth:100% }
+}
 #top_menu_buttons{
-    height:50vh;
+	height:50vh;
 }
 #buttons_sub{
     float: left;
@@ -42,13 +44,12 @@ $user_id = $id;
 <?php include("header.php"); ?>
 
 <div class="container ">
-<h2 class="m-1">トップページ</h2>
 <div class="row">
-<div id="character" class="col-6">
-	<br><br><br><br><br><br><br><br><br>
+<div id="character" class="col-12 col-lg-6 text-center">
+	<img src="assets/neko1.png" class="h-100 w-100 m-auto"/>
 </div>
 <div class="col-12 col-lg-6">
-	<div id="name " class="container my-5">
+	<div id="name" class="container my-1">
 		<div class="p-3 m-0 bg_gray_t">
 		<?php if ($user_id!="") echo "<div><h4>ID:".$user_id."</h4></div>";
 		include_once 'dbconnect.php';
