@@ -5,8 +5,16 @@ if(!isset($_SESSION['user'])) {
 	header("Location: signin.php");
 }
 $id = $_SESSION['user'];
-
 $user_id = $id;
+include_once 'dbconnect.php';
+$dsn = 'mysql:host='.$host.';dbname='.$dbname.';charset=utf8';
+$pdo = new PDO($dsn, $username, $password, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+$sql = "SELECT point,achv FROM users WHERE id=?";
+$stmt = $pdo->prepare($sql);
+$stmt->execute([$user_id]);
+$result = $stmt->fetch(PDO::FETCH_ASSOC);
+$achv = $result['achv'];
+$point = $result['point'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -46,20 +54,19 @@ $user_id = $id;
 <div class="container ">
 <div class="row">
 <div id="character" class="col-12 col-lg-6 text-center">
-	<img src="assets/neko1.png" class="h-100 w-100 m-auto"/>
+<?php
+	if ($point >= 50) {
+		echo '<img src="assets/neko2.png" class="h-100 w-100 m-auto"/>';
+	} else {
+		echo '<img src="assets/neko1.png" class="h-100 w-100 m-auto"/>';
+	}
+?>
 </div>
 <div class="col-12 col-lg-6">
 	<div id="name" class="container my-1">
 		<div class="p-3 m-0 bg_gray_t">
-		<?php if ($user_id!="") echo "<div><h4>ID:".$user_id."</h4></div>";
-		include_once 'dbconnect.php';
-		$dsn = 'mysql:host='.$host.';dbname='.$dbname.';charset=utf8';
-		$pdo = new PDO($dsn, $username, $password, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-		$sql = "SELECT achv FROM users WHERE id=?";
-		$stmt = $pdo->prepare($sql);
-		$stmt->execute([$user_id]);
-		$result = $stmt->fetch(PDO::FETCH_ASSOC);
-		$achv = $result['achv'];
+		<?php
+		if ($user_id!="") echo "<div><h4>ID:".$user_id."</h4></div>";
 		$sql = "SELECT * FROM ach_db WHERE achv_id=?";
 		$stmt = $pdo->prepare($sql);
 		$stmt->execute([$achv]);
