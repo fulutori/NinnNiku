@@ -54,6 +54,9 @@ if(isset($_POST['signup'])) {
 	$sql = "INSERT INTO users(id,password) VALUES(?, ?)";
 	$stmt = $pdo->prepare($sql);
 	if($stmt->execute([$user, $pass])) {
+		$sql2 = "INSERT INTO ach_log(id,achv_id) VALUES(?, ?),(?, ?)";
+		$stmt2 = $pdo->prepare($sql2);
+		$stmt2->execute([$user,1,$user,8]);
 		?><br><br><div class="alert alert-success" role="alert">登録しました</div><?php
 	} else {
 		?><br><br><div class="alert alert-danger" role="alert">エラーが発生しました</div><?php
