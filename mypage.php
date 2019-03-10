@@ -53,11 +53,12 @@ $user_id = $id;
 			include_once 'dbconnect.php';
 			$dsn = 'mysql:host='.$host.';dbname='.$dbname.';charset=utf8';
 			$pdo = new PDO($dsn, $username, $password, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-			$sql = "SELECT achv FROM users WHERE id=?";
+			$sql = "SELECT point,achv FROM users WHERE id=?";
 			$stmt = $pdo->prepare($sql);
 			$stmt->execute([$user_id]);
 			$result = $stmt->fetch(PDO::FETCH_ASSOC);
 			$achv = $result['achv'];
+			$point = $result['point'];
 			$sql = "SELECT * FROM ach_db WHERE achv_id=?";
 			$stmt = $pdo->prepare($sql);
 			$stmt->execute([$achv]);
@@ -68,7 +69,7 @@ $user_id = $id;
 			?>
 		</div>
 		<div class="col-6">
-			<?php echo "0point";?>
+			<?php echo $point."point";?>
 		</div>
 	</div>
 	</div>
