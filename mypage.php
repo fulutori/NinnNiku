@@ -73,8 +73,30 @@ $user_id = $id;
 	</div>
 	</div>
 </div>
-<div class="card m-1 col-lg-6">
+<div class="card m-1 col-md-6">
 	<h4 class="card-title">獲得した称号</h4>
+	<div class="container"><div class="row">
+			<?php
+				$cnt=0;
+				while(1){
+				$sql = "SELECT * FROM ach_db WHERE achv_id=?";
+				$stmt = $pdo->prepare($sql);
+				$stmt->execute([$cnt]);
+				$result = $stmt->fetch(PDO::FETCH_ASSOC);
+				if($result['achv_name']==""){break;}
+				$achv_name=$result['achv_name'];//称号の名前
+				$achv_class=$result['rare'];//称号のクラス
+				echo "<div class=\"col-12 col-lg-6 text-center\">";
+				if(false){
+					echo "<div class=\"rounded px-3 py-1 m-1 text-white achv achv_cls".$achv_class."\">".$achv_name;
+				}else{
+					echo "<div class=\"rounded px-3 py-1 m-1 text-white achv bg-dark \">".$achv_name;
+				}
+				echo "</div></div>";
+				$cnt++;
+				}
+			?>
+			</div></div>
 	<!--phpで全表示を書く-->
 </div>
 <div class="card m-1 col-lg-6">
