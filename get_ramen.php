@@ -13,7 +13,7 @@ $user_id = $_POST['user_id'];
 # WHERE abs(latitude - ?) < 0.0003 AND abs(longitude - ?) < 0.0005
 $sql = 'SELECT * FROM shop WHERE abs(latitude - ?) < 0.0003 AND abs(longitude - ?) < 0.0005 ORDER BY abs(latitude - ?) + abs(longitude - ?) limit 1';
 $stmt = $pdo->prepare($sql);
-if ($stmt->execute([$ido, $keido])) {
+if ($stmt->execute([$ido, $keido, $ido, $keido])) {
 	$result = $stmt->fetch(PDO::FETCH_ASSOC);
 	$shop_name = $result['shop_name'];
 	$ramen_num = $result['ramen_num'];
