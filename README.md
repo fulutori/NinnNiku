@@ -2,6 +2,7 @@
 Hack Festival Fukuoka(2019/03/09~10)にて制作したPHPのwebアプリケーションです。 
 <p align="center">
     <img src="https://user-images.githubusercontent.com/39111330/54140908-fc7ecf00-4467-11e9-8b30-f309801d0f47.png" title="NinnNikuLogo">
+    <h4 align="center">NinnNiku</h4>
 </p>
 福岡市内のラーメン店にチェックインし、ポイント獲得を楽しむwebアプリケーションです。
 
