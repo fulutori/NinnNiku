@@ -4,6 +4,7 @@ Hack Festival Fukuoka(2019/03/09~10)にて制作したPHPのwebアプリケー�
     <img src="https://user-images.githubusercontent.com/39111330/54140908-fc7ecf00-4467-11e9-8b30-f309801d0f47.png" title="NinnNikuLogo">
     <h4 align="center">NinnNiku</h4>
 </p>
+<img alt="GitHub" src="https://img.shields.io/github/license/fulutori/NinnNiku.svg">
 福岡市内のラーメン店にチェックインし、ポイント獲得を楽しむwebアプリケーションです。
 
 ## 依存関係(Dependency)  
